@@ -8,7 +8,22 @@ window.onscroll = function(){
         header.classList.remove('nav-fixed');
     }
 }
+    //mode terang 
+    const darkModeButton = document.getElementById('darkModeButton');
+    const body = document.body;
+    const icon = document.getElementById('icon');
 
+    function toggleDarkMode() {
+        body.classList.toggle('dark');
+        const isDarkMode = body.classList.contains('dark');
+        if (isDarkMode) {
+            icon.className = "fas fa-moon"; 
+        } else {
+            icon.className = 'fas fa-sun';     
+             }
+    }
+    const sunIcon = document.getElementById('icon');
+    icon.style.fontSize = '25px';
 // hamburger button
 const hamburger = document.querySelector('#hamburger');
 const navMenu = document.querySelector('#nav-menu');
