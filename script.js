@@ -23,7 +23,6 @@ window.onscroll = function(){
              }
     }
     const sunIcon = document.getElementById('icon');
-    icon.style.fontSize = '25px';
 // hamburger button
 const hamburger = document.querySelector('#hamburger');
 const navMenu = document.querySelector('#nav-menu');
