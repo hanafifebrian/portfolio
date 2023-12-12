@@ -30,3 +30,16 @@ window.onscroll = function(){
         hamburger.classList.toggle('hamburger-active');
         navMenu.classList.toggle('hidden');
     });
+        // Temukan elemen input email
+        const emailInput = document.querySelector('input[name="email"]');
+    
+        // Tambahkan event listener untuk memodifikasi input saat kehilangan fokus (blur)
+        emailInput.addEventListener('blur', function() {
+            // Periksa apakah input email tidak mengandung "@gmail.com"
+            if (emailInput.value.indexOf('@') === -1) {
+                // Tambahkan "@gmail.com" jika tidak ada
+                emailInput.value += "@hnfbryn.com";
+            }else{
+                emailInput.value += " ";
+            }
+        });
