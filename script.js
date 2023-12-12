@@ -43,3 +43,31 @@ window.onscroll = function(){
                 emailInput.value += " ";
             }
         });
+        //jam
+
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById('dateTime');
+            const optionsDateTime = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true,
+                timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
+            };
+
+            const currentDateTime = new Date().toLocaleString([], optionsDateTime);
+            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const timeZoneLink = `https://www.timeanddate.com/time/zones/${timeZone}`;
+
+            dateTimeElement.innerHTML = `<a href="${timeZoneLink}" target="_blank">${currentDateTime} || ${timeZone}</a>`;
+        }
+
+        // Update the date, time, and time zone every second
+        setInterval(updateDateTime, 1000);
+
+        // Initial date, time, and time zone update
+        document.addEventListener('DOMContentLoaded', updateDateTime);
