@@ -289,31 +289,59 @@ const languageData = {
     
   };
 
-  function changeLanguage(language) {
-    // Dapatkan teks untuk bahasa yang dipilih
-    const texts = languageData[language];
+  const defaultLanguage = 'en';
 
-    // Perbarui seluruh konten dengan teks baru
+  const regionLanguages = {
+    'JP': 'ja', // Jepang
+    'ID': 'id', // Indonesia
+    'KR': 'ko', // Korea
+    'US': 'en', // Inggris
+    'SA': 'ar'  // Arab
+    // Tambahkan region dan bahasa lainnya sesuai kebutuhan
+  };
+  
+  function getUserRegion() {
+    // Implementasi deteksi region pengguna
+    // Misalnya, menggunakan GeoIP atau navigator.language
+    // Kembalikan kode region (contoh: 'ID' untuk Indonesia)
+  }
+  
+  function getTargetLanguage() {
+    const userRegion = getUserRegion();
+    return regionLanguages[userRegion] || defaultLanguage;
+  }
+  
+  function changeLanguage(language) {
+    const texts = languageData[language];
+  
     Object.keys(texts).forEach((key) => {
       const elements = document.querySelectorAll(`.lang-${key}`);
       elements.forEach((element) => {
         element.textContent = texts[key];
       });
     });
-
-    // Tutup modal setelah mengubah bahasa
+  
     const modal = document.getElementById('languageModal');
     modal.classList.add('invisible');
   }
-
+  
   const languageSelectorButton = document.getElementById('languageSelectorButton');
   const languageModal = document.getElementById('languageModal');
   const closeModalButton = document.getElementById('closeModalButton');
-
+  
   languageSelectorButton.addEventListener('click', () => {
+    const targetLanguage = getTargetLanguage();
+    changeLanguage(targetLanguage);
     languageModal.classList.remove('invisible');
   });
-
+  
   closeModalButton.addEventListener('click', () => {
     languageModal.classList.add('invisible');
   });
+  
+  // Pemanggilan fungsi untuk mengatur bahasa saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', () => {
+    const targetLanguage = getTargetLanguage();
+    changeLanguage(targetLanguage);
+  });
+  
