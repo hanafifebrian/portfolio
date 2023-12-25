@@ -288,7 +288,6 @@ const languageData = {
     },
     
   };
-
   const defaultLanguage = 'en';
 
   const regionLanguages = {
@@ -300,14 +299,14 @@ const languageData = {
     // Tambahkan region dan bahasa lainnya sesuai kebutuhan
   };
   
-  function getUserRegion() {
-    // Implementasi deteksi region pengguna
-    // Misalnya, menggunakan GeoIP atau navigator.language
-    // Kembalikan kode region (contoh: 'ID' untuk Indonesia)
-  }
-  
   function getTargetLanguage() {
-    const userRegion = getUserRegion();
+    // Mendapatkan kode bahasa dari navigator.language atau navigator.userLanguage
+    const userLanguage = navigator.language || navigator.userLanguage;
+    
+    // Mendapatkan kode region dari kode bahasa
+    const userRegion = userLanguage.substring(userLanguage.lastIndexOf('-') + 1).toUpperCase();
+  
+    // Mengembalikan bahasa sesuai region atau bahasa default jika tidak dikenali
     return regionLanguages[userRegion] || defaultLanguage;
   }
   
