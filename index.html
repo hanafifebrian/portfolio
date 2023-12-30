@@ -76,6 +76,9 @@
     .hamburger-active > span:nth-child(3){
          @apply origin-bottom-left -rotate-45;
     }
+    .person{
+
+    }
   </style>
 <body class="scroll-smooth" >
     
@@ -128,7 +131,7 @@
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2 animate__animated animate__fadeInDown transition duration-300">           
-                    <h1 class="text-base lang-greeting animate__animated animate__fadeInLeft transition duration-200  font-semibold text-biru lg:text-xl ">halo semua 👋,perkenalkan saya</h1>
+                    <h1  class="text-base lang-greeting animate__animated animate__fadeInLeft transition duration-200  font-semibold text-biru lg:text-xl ">halo semua 👋,perkenalkan saya</h1>
                     <h1 class="text-base animate__animated animate__fadeInLeft transition duration-200  font-semibold text-biru lg:text-xl "><span class="block lang-namleng text-slate-800 dark:text-slate-100 font-bold text-4xl mt-1 lg:text-5xl">Hanafi Febriansyah</span></h1>
                     <h2 class="text-ptng lang-introduction animate__animated animate__fadeInLeft transition duration-200 font-medium dark:text-slate-100 text-lg mb-5 lg:text-2xl">saya adalah seorang pelajar</h2>
                     <p class="text-ptng lang-journey animate__animated animate__fadeInLeft transition duration-200 font-medium dark:text-slate-200 mb-10 leading-relaxed">Semoga perjalanan Saya dalam dunia pemrograman terus berkembang dan membawa kesuksesan di masa depan!</p>
@@ -137,7 +140,8 @@
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2">
                     <div class="relative mt-10 lg:mt-9 lg:right-0 animate__animated animate__fadeInRight transition duration-200">
-                        <img src="./assets/person.png" alt="person" class="w-[630px] max-w-full mx-auto">
+                        <!-- img -->
+                        <div id="imageContainer"></div>
                         <!-- <span class="absolute  -bottom-14 lg:-bottom-0 -z-10 left-1/2 -translate-x-1/2 lg:scale-125 rotate-45">
                             <svg width="200px" height="400px" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#06b6d4" d="M34.4,-42.6C46,-31.2,57.8,-21.8,62.9,-8.8C68,4.2,66.3,20.8,58.8,34.1C51.3,47.5,38,57.6,23.3,62.2C8.6,66.7,-7.5,65.7,-24.9,62.1C-42.4,58.5,-61.3,52.4,-65.7,40.1C-70.1,27.9,-60,9.5,-54,-6.9C-47.9,-23.3,-45.9,-37.7,-37.5,-49.7C-29.2,-61.6,-14.6,-71,-1.6,-69C11.4,-67.1,22.8,-53.9,34.4,-42.6Z" transform="translate(100 100) scale(1.1)" />
@@ -266,28 +270,28 @@
                 <!-- img start -->
                 <div class="mb-12 p-4 md:w-1/2">
                     <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="./assets/1.png" alt="" width="w-full">
+                        <img src="./assets/portofolio/1.png" alt="" width="w-full">
                     </div>
                     <h3 class="font-semibold text-xl text-gelap mt-5 mb-3 dark:text-slate-100">Landing page Hanafi febriansyah</h3>
                     <p class="font-medium text-base text-ptng dark:text-slate-200">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, inventore molestias? Odit!</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
                     <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="./assets/1.png" alt="" width="w-full">
+                        <img src="./assets/portofolio/1.png" alt="" width="w-full">
                     </div>
                     <h3 class="font-semibold text-xl text-gelap mt-5 mb-3 dark:text-slate-100">Landing page Hanafi febriansyah</h3>
                     <p class="font-medium text-base text-ptng dark:text-slate-200">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, inventore molestias? Odit!</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
                     <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="./assets/1.png" alt="" width="w-full">
+                        <img src="./assets/portofolio/1.png" alt="" width="w-full">
                     </div>
                     <h3 class="font-semibold text-xl text-gelap mt-5 mb-3 dark:text-slate-100">Landing page Hanafi febriansyah</h3>
                     <p class="font-medium text-base text-ptng dark:text-slate-200">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, inventore molestias? Odit!</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
                     <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="./assets/1.png" alt="" width="w-full">
+                        <img src="./assets/portofolio/1.png" alt="" width="w-full">
                     </div>
                     <h3 class="font-semibold text-xl text-gelap mt-5 mb-3 dark:text-slate-100">Landing page Hanafi febriansyah</h3>
                     <p class="font-medium text-base text-ptng dark:text-slate-200">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis, inventore molestias? Odit!</p>
@@ -325,14 +329,14 @@
                             <input type="hidden" name="_next" value="https://hanafifebriansyah.vercel.app/thanks.html">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_captcha" value="false">
-                            <button type="submit" class="text-base lang-send font-semibold text-white bg-biru py-3 px-8 rounded-full w-full hover:bg-birtu hover:shadow-lg transition duration-300 ease-in-out">Kirim</button>
+                            <button type="submit" class="text-base lang-send font-semibold text-white bg-biru py-3 px-8 rounded-full w-full hover:bg-birtu hover:shadow-2xl hover:shadow-biru transition duration-300 ease-in-out">Kirim</button>
                         </div>
                     </div>
                     </form>
             </div>
             <div class="w-full px-4 lg:w-1/2">
                 <div class="relative mt-4 lg:mt-7 lg:right-0">
-                    <img src="./assets/contact me.png" alt="contact me" class="animate__animated animate__fadeInRigh hidden sm:hidden w-full lg:inline transition duration-200 max-w-full mx-auto">
+                    <img src="./assets/kontak/email.gif" alt="contact me" class="animate__animated animate__fadeInRigh hidden mt-16 sm:hidden w-[890px] lg:inline transition duration-200 max-w-full mx-auto">
                 </div>
             </div>
             
